@@ -1,0 +1,7 @@
+<div class="toggle-button-list" ng-show="data">
+  <ul ng-class="{ antipref: type === 'antipref' }">
+    <li ng-repeat="item in data.list">
+      <toggle-button label="item[labelField]" data="item" has-media="hasMedia"></toggle-button>
+    </li>
+  </ul>
+</div>

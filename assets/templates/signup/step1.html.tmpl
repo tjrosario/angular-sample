@@ -1,0 +1,55 @@
+<div class="step" ng-controller="SignUpStep1Ctrl">
+
+  <div class="progress">
+    <h2>Step 1 of 4: <span>Sizing</span></h2>
+ 
+    <div class="bar">
+      <div class="animate" style="width:25%;"></div>
+    </div>
+    <p>Signing up for ThreadLab is easy and takes about a minute.  Your sizing preferences form the base of your ThreadLab profile and are used to find the clothing that fits you best.</p>
+  </div>
+
+  <form name="signupForm.step1" novalidate>
+    <h3>Casual Shirt</h3>
+    <div class="buttons toggle-box-small">
+      <checkbox-list data="casualShirtSize" label-field="value" limit="1"></checkbox-list>
+    </div>
+
+    <h3>Waist</h3>
+    <div class="buttons toggle-box-small">
+      <checkbox-list data="waistSize" label-field="value" limit="1"></checkbox-list>
+    </div>
+
+    <h3>Inseam (Pant Length)</h3>
+    <div class="buttons toggle-box-small">
+      <checkbox-list data="pantLength" label-field="value" limit="1"></checkbox-list>
+    </div>
+
+    <div class="row">
+      <div class="field span3">
+        <div class="form-group statedHeight">
+          <h3>Height</h3>
+          <select name="statedHeight" ng-model="customer.statedHeight" required class="form-control state">
+            <option value="">Pick a Height</option>
+            <option ng-repeat="height in heights" value="{{ height.value }}" ng-bind="height.value"></option>
+          </select>
+          <div ng-show="signupForm.step1.statedHeight.$invalid && !signupForm.step1.statedHeight.$pristine" class="alert">Height is required.</div>
+        </div>
+      </div>
+
+      <div class="field span3">
+        <div class="form-group statedWeight">
+          <h3>Weight (lbs)</h3>
+          <input type="number" name="statedWeight" ng-model="customer.statedWeight" required class="form-control" ng-minlength="3" ng-maxlength="3" placeholder="Enter Weight">
+          <div ng-show="signupForm.step1.statedWeight.$invalid && !signupForm.step1.statedWeight.$pristine" class="alert">Weight is required.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="control align-center">
+      <div class="inner">
+        <input type="submit" scroll-to-item scroll-to="body" class="button button-dark" value="Next, set your basic preferences" ng-disabled="!casualShirtSize.selected.length || !waistSize.selected.length || !pantLength.selected.length || signupForm.step1.statedHeight.$invalid || signupForm.step1.statedWeight.$invalid" ng-click="goToStep2()" id="signup-step01next00"/>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,26 @@
+<div ng-controller="SignUpStep4Ctrl" class="step">
+  <div class="step user-info">
+
+    <div class="progress">
+      <h2>Step 4 of 4: <span>Create an Account</span></h2>
+ 
+      <div class="bar">
+        <div class="animate" style="width:98%;"></div>
+      </div>
+    </div>
+
+    <form name="signupForm" id="signupForm" novalidate ng-submit="signUp()">
+       <div ng-include="'/templates/user/partials/signup-form.html.tmpl'"></div>
+
+       <div ng-include="'/templates/user/partials/signup-disclaimer.html.tmpl'"></div>
+
+       <div class="control align-center">
+        <div class="inner">
+          <button type="submit" class="button button-large" ng-disabled="signupForm.$invalid || loading || registering" id="signup-register00">Create your profile</button>
+          <a class="button button-transparent" ui-sref="signup.step3" scroll-to-item scroll-to="body" id="signup-previousstep02">Return to previous screen</a>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

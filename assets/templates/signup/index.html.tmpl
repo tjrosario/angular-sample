@@ -1,0 +1,47 @@
+<div class="signup" ng-controller="SignUpCtrl">
+
+  <h1 class="hidden">Get Started with ThreadLab</h1>
+  <div class="wrapper" ng-if="validation.error">
+    <div class="msg alert" ng-class="{ active: validation.error }"><i class="fa fa-exclamation-circle"></i><span ng-bind="validation.error"></span></div>
+  </div>
+
+  <nav class="nav-progress">
+    <div class="wrapper">
+      <div class="holder">
+        <ol>
+          <li class="span4" ng-class="{ 'active': signupStep1Active, 'complete': signupStep1Complete }">
+            <a ui-sref="signup.step1" class="block">
+              <div class="number"><div>1</div></div>
+              <div class="title">Sizing</div>
+            </a>
+          </li>
+          <li class="span4" ng-class="{ 'active': signupStep2Active, 'complete': signupStep2Complete }">
+            <a ui-sref="signup.step2" class="block">
+              <div class="number"><div>2</div></div>
+              <div class="title">Fit &amp; Style</div>
+            </a>
+          </li>
+          <!--
+          <li class="span3" ng-class="{ 'active': signupStep3Active, 'complete': signupStep3Complete}">
+            <a ui-sref="signup.step3" class="block">
+              <div class="number"><div>3</div></div>
+              <div class="title">Price Ranges</div>
+            </a>
+          </li> -->
+          <li class="span4" ng-class="{ 'active': signupStep4Active }">
+            <a ui-sref="signup.step4" class="block">
+              <div class="number"><div>3</div></div>
+              <div class="title">Account</div>
+            </a>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wrapper">
+    <div ui-view ></div>
+
+    <loader></loader>
+  </div>
+</div>

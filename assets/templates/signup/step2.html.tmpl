@@ -1,0 +1,41 @@
+<div ng-controller="SignUpStep2Ctrl" class="step">
+  <div class="step one-row">
+
+    <div class="progress">
+      <h2>Step 2 of 4: <span>Fit &amp; Style</span></h2>
+    
+      <div class="bar">
+        <div class="animate" style="width:50%;"></div>
+      </div>
+      <p>These fit and style preferences ensure you get the clothing that is the right match for you.</p>
+    </div>
+
+ 
+    <h3>Jeans Fit</h3>
+    <div class="buttons">
+      <checkbox-list data="jeansFit" label-field="value"></checkbox-list>
+
+    <h3>Shirt Fit</h3>
+    <div class="buttons">
+      <checkbox-list data="casualShirtFit" label-field="value"></checkbox-list>
+    </div>
+
+
+    <h3>Shirt Patterns You Like <span>(Deselect any you don't like)</span></h3>
+    <div class="buttons">
+      <checkbox-list data="casualShirtPattern" label-field="value" type="antipref" limit="{{ casualShirtPattern.list.length - 1 }}"></checkbox-list>
+    </div>
+ 
+    <h3>Shirt / Sweater Colors You Like <span>(Deselect any you don't like)</span></h3>
+    <div class="buttons">
+      <checkbox-list data="casualShirtColor" label-field="value" type="antipref" limit="{{ casualShirtColor.list.length - 1 }}"></checkbox-list>
+    </div>
+
+    <div class="control align-center">
+      <div class="inner">
+       <input type="submit" scroll-to-item scroll-to="body" class="button button-dark" value="Now, set your preferred pricing" ng-disabled="!jeansFit.selected.length || !casualShirtFit.selected.length" ng-click="setFitandStylePreferences()" id="signup-step02next00"/>
+        <a class="button button-transparent"  scroll-to-item scroll-to="body" ng-click="goToStep1()" id="signup-previousstep00">Return to previous screen</a>
+      </div>
+    </div>
+  </div>
+</div>

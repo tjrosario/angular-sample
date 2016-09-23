@@ -1,0 +1,56 @@
+<div ng-controller="SignUpStep3Ctrl" class="step">
+  <div class="step one-row toggle-box-square">
+
+    <div class="progress">
+      <h2>Step 3 of 4: <span>Price Ranges</span></h2>
+
+      <div class="bar">
+        <div class="animate" style="width:75%;"></div>
+      </div>
+      <p>The price ranges for each type of clothing tailors your profile to a budget that works for you. As always, when you order you choose the clothes you want, and setting your budget doesn't obligate you to do anything.</p>
+    </div>
+
+    <div class="row">
+      <div class="span4">
+        <h3>Jeans</h3>
+        <div class="buttons">
+          <checkbox-list data="jeansPriceRange" label-field="value"></checkbox-list>
+        </div>
+      </div>
+      <div class="span4">
+        <h3>Shorts</h3>
+        <div class="buttons">
+          <checkbox-list data="shortsPriceRange" label-field="value"></checkbox-list>
+        </div>
+      </div>
+      <div class="span4">
+        <h3>Button Up Casual Shirts</h3>
+        <div class="buttons">
+          <checkbox-list data="casualShirtPriceRange" label-field="value"></checkbox-list>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span4">
+        <h3>Polo Shirts</h3>
+        <div class="buttons">
+          <checkbox-list data="golfPoloShirtPriceRange" label-field="value"></checkbox-list>
+        </div>
+      </div>
+      <div class="span4">
+        <h3>Sweaters</h3>
+        <div class="buttons">
+          <checkbox-list data="sweaterPriceRange" label-field="value"></checkbox-list>
+        </div>
+      </div>
+    </div>
+
+    <div class="control align-center">
+      <div class="inner">
+        <input type="submit" scroll-to-item scroll-to="body" class="button button-dark" value="Continue to the last step" ng-disabled="!jeansPriceRange.selected.length || !shortsPriceRange.selected.length || !casualShirtPriceRange.selected.length || !golfPoloShirtPriceRange.selected.length || !sweaterPriceRange.selected.length" ng-click="setPricePrefs()" id="signup-step03next00" />
+        <a class="button button-transparent" ui-sref="signup.step2" scroll-to-item scroll-to="body" id="signup-previousstep01">Return to previous screen</a>
+      </div>
+    </div>
+  </div>
+</div>
