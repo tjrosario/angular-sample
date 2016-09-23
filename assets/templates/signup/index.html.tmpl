@@ -1,6 +1,6 @@
 <div class="signup" ng-controller="SignUpCtrl">
 
-  <h1 class="hidden">Get Started with ThreadLab</h1>
+  <h1 class="hidden">Get Started</h1>
   <div class="wrapper" ng-if="validation.error">
     <div class="msg alert" ng-class="{ active: validation.error }"><i class="fa fa-exclamation-circle"></i><span ng-bind="validation.error"></span></div>
   </div>
@@ -21,13 +21,6 @@
               <div class="title">Fit &amp; Style</div>
             </a>
           </li>
-          <!--
-          <li class="span3" ng-class="{ 'active': signupStep3Active, 'complete': signupStep3Complete}">
-            <a ui-sref="signup.step3" class="block">
-              <div class="number"><div>3</div></div>
-              <div class="title">Price Ranges</div>
-            </a>
-          </li> -->
           <li class="span4" ng-class="{ 'active': signupStep4Active }">
             <a ui-sref="signup.step4" class="block">
               <div class="number"><div>3</div></div>
